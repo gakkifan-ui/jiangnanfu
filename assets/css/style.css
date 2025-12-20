@@ -480,3 +480,35 @@ p{ margin:0 0 12px; }
   .plates{ grid-template-columns: 1fr; }
   .plate-title{ font-size: 15px; }
 }
+
+
+
+/* =========================================
+   Reservation page: premium hover effects
+   ========================================= */
+
+/* 电话号码（a[href^="tel"]） */
+a[href^="tel"]{
+  color: rgba(244,241,234,.95);
+  transition: color .18s ease;
+}
+
+a[href^="tel"]:hover,
+a[href^="tel"]:focus{
+  color: rgba(201,165,106,.9);
+}
+
+/* 预约主按钮（已有 btn-reserve） */
+.btn-reserve{
+  transition: 
+    color .18s ease,
+    border-color .18s ease,
+    background-color .18s ease;
+}
+
+.btn-reserve:hover,
+.btn-reserve:focus{
+  color: rgba(201,165,106,.95);
+  border-color: rgba(201,165,106,.45);
+  background: rgba(201,165,106,.06);
+}
