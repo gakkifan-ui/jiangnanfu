@@ -325,4 +325,158 @@ p{ margin:0 0 12px; }
 }
 
 
+/* =========================================================
+   Plates section (premium)
+   ========================================================= */
 
+.plates{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+}
+
+.plate{
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.02);
+  overflow: hidden;
+}
+
+.plate-media{
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: rgba(255,255,255,.03);
+}
+
+.plate-media img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+  filter: saturate(.98) contrast(1.02);
+  transform: scale(1.01);
+}
+
+.plate-body{
+  padding: 14px 14px 16px;
+}
+
+.plate-tag{
+  font-size: 11px;
+  letter-spacing: 2.6px;
+  color: rgba(201,165,106,.92);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.plate-title{
+  margin: 0 0 8px;
+  font-size: 16px;
+  letter-spacing: .6px;
+}
+
+.plate-desc{
+  margin: 0;
+  color: rgba(189,182,170,.92);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* mobile */
+@media (max-width:860px){
+  .plates{
+    grid-template-columns: 1fr;
+  }
+  .plate-title{ font-size: 15px; }
+}
+
+
+/* =========================================================
+   Plates: premium placeholders + refined spacing
+   ========================================================= */
+
+.plates{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+}
+
+.plate{
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.02);
+  overflow: hidden;
+}
+
+.plate-media{
+  position: relative;
+  aspect-ratio: 16 / 14;
+  background: rgba(255,255,255,.03);
+}
+
+/* 没有图片时也高级：柔和光晕占位 */
+.plate-media.placeholder::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(700px 240px at 20% 20%, rgba(201,165,106,.16), transparent 60%),
+    radial-gradient(520px 220px at 80% 10%, rgba(201,165,106,.10), transparent 58%),
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+}
+
+.plate-media.placeholder::after{
+  content:"IMAGE";
+  position:absolute;
+  left:16px;
+  bottom:14px;
+  font-size:11px;
+  letter-spacing:3px;
+  color: rgba(189,182,170,.75);
+  border: 1px solid rgba(255,255,255,.10);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.18);
+}
+
+.plate-media img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+  filter: saturate(.98) contrast(1.02);
+  transform: scale(1.01);
+}
+
+.plate-body{
+  padding: 14px 14px 16px;
+}
+
+.plate-tag{
+  font-size: 11px;
+  letter-spacing: 2.6px;
+  color: rgba(201,165,106,.92);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.plate-title{
+  margin: 0 0 8px;
+  font-size: 16px;
+  letter-spacing: .6px;
+}
+
+.plate-desc{
+  margin: 0;
+  color: rgba(189,182,170,.92);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* mobile */
+@media (max-width:860px){
+  .plates{ grid-template-columns: 1fr; }
+  .plate-title{ font-size: 15px; }
+}
