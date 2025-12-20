@@ -1,0 +1,328 @@
+/* =========================================================
+   江南府 | JIANGNAN FU
+   Minimal site style (JP + EN)
+   ========================================================= */
+
+:root{
+  --bg:#07080b;
+  --text:#f4f1ea;
+  --muted:#bdb6aa;
+  --gold:#c9a56a;
+  --border:rgba(255,255,255,.08);
+  --radius:18px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+
+body{
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "PingFang SC",
+    "Microsoft YaHei",
+    Arial;
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(201,165,106,.10), transparent 60%),
+    radial-gradient(900px 500px at 80% 20%, rgba(201,165,106,.08), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.8;
+}
+
+a{ color:inherit; text-decoration:none; }
+p{ margin:0 0 12px; }
+
+.wrap{ width:min(1100px,92%); margin:0 auto; }
+
+/* ---------- Header ---------- */
+.header{
+  position:fixed;
+  top:0; left:0; right:0;
+  background:rgba(7,8,11,.72);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--border);
+  z-index:50;
+  transition: background-color .18s ease, border-color .18s ease;
+}
+.header.scrolled{
+  background: rgba(7,8,11,.90);
+  border-bottom: 1px solid rgba(201,165,106,.18);
+}
+
+.nav{
+  max-width:1100px;
+  margin:0 auto;
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.brand{ line-height:1.1; }
+.brand .cn{ font-size:20px; letter-spacing:2px; }
+.brand .en{ font-size:11px; letter-spacing:4px; color:var(--muted); margin-top:4px; }
+
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.menu{
+  display:flex;
+  gap:18px;
+}
+.menu a{
+  font-size:13px;
+  color:var(--muted);
+  padding:6px 2px;
+}
+.menu a:hover,
+.menu a.active{
+  color:var(--text);
+  border-bottom:1px solid rgba(201,165,106,.75);
+}
+
+.lang{
+  font-size:12px;
+  color:rgba(189,182,170,.92);
+  letter-spacing:.4px;
+  padding:6px 8px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:12px;
+}
+.lang:hover{ color:rgba(201,165,106,.9); border-color: rgba(201,165,106,.35); }
+
+.btn-reserve{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:14px;
+  border:1px solid rgba(201,165,106,.55);
+  background:rgba(201,165,106,.10);
+  font-size:13px;
+  letter-spacing:.6px;
+}
+.btn-reserve:hover{ transform:translateY(-1px); }
+
+/* ---------- Page spacing under fixed header ---------- */
+.page{ padding-top:88px; }
+
+/* ---------- Minimal Hero ---------- */
+.hero-min{
+  min-height:calc(100vh - 88px);
+  display:flex;
+  align-items:center;
+  position:relative;
+  padding: 18px 0;
+}
+
+.hero-min::before{
+  content:"";
+  position:absolute;
+  inset:-160px -25% auto -25%;
+  height:560px;
+  background:radial-gradient(closest-side, rgba(201,165,106,.12), transparent 66%);
+  pointer-events:none;
+  filter:blur(2px);
+}
+
+.kicker{
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:12px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+
+.hero-title{
+  margin:12px 0 10px;
+  font-size:46px;
+  letter-spacing:6px;
+  line-height:1.12;
+}
+.hero-sub{
+  display:block;
+  margin-top:10px;
+  font-size:12px;
+  letter-spacing:5px;
+  color:var(--muted);
+  font-weight:600;
+}
+
+.hero-lead{
+  margin:18px 0 8px;
+  font-size:18px;
+  line-height:1.75;
+  letter-spacing:.6px;
+  max-width:60ch;
+}
+
+.hero-desc{
+  color:var(--muted);
+  max-width:62ch;
+}
+
+/* ---------- Minimal content pages ---------- */
+.section{
+  padding: 44px 0 18px;
+}
+
+.page-title{
+  margin: 0 0 10px;
+  font-size: 26px;
+  letter-spacing: .6px;
+}
+
+.card{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.02);
+  padding:18px;
+}
+
+.list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: rgba(189,182,170,.95);
+}
+.list li{ margin: 8px 0; }
+
+.muted{ color: var(--muted); }
+.small{ font-size: 12.5px; }
+
+/* ---------- Form minimal ---------- */
+.input{
+  width:100%;
+  margin-top:8px;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  outline:none;
+}
+.input:focus{
+  border-color: rgba(201,165,106,.45);
+}
+
+/* ---------- Map section ---------- */
+.map-section{ padding: 22px 0 0; }
+.map-iframe{
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.map-iframe iframe{
+  display:block;
+  width:100%;
+  height:520px;
+  border:0;
+}
+
+/* ---------- Footer (gold line + dark bg) ---------- */
+.footer{
+  padding:20px 0 18px;
+  background:#0b0c10;
+  border-top:1px solid rgba(201,165,106,.6);
+}
+
+.footer-grid{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.footer-left{ min-width:180px; }
+
+.ig-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color: rgba(189,182,170,.9);
+  padding:8px 0;
+  transition: color .18s ease;
+}
+.ig-link:hover{ color: rgba(201,165,106,.9); }
+.ig-link svg{ display:block; }
+
+.ig-text{
+  font-size:13px;
+  letter-spacing:1px;
+}
+
+.footer-right{
+  text-align:right;
+  color:rgba(189,182,170,.95);
+  font-size:12.5px;
+  line-height:2.0;
+  letter-spacing:.35px;
+}
+
+.footer-right .info-line{ margin-bottom:6px; }
+.footer-right .info-block{ margin:10px 0 8px; line-height:1.8; }
+.footer-right .info-block > div:first-child{ letter-spacing:1.2px; }
+.footer-right .muted{ opacity:.85; }
+
+/* ---------- Responsive ---------- */
+@media (max-width:860px){
+  .menu{ display:none; }
+  .hero-title{ font-size:40px; }
+  .map-iframe iframe{ height:340px; }
+
+  .footer-grid{ flex-direction:column; align-items:flex-start; }
+  .footer-right{ text-align:left; }
+}
+
+/* =========================================
+   Gold accent text (hero keywords)
+   ========================================= */
+
+.accent{
+  color: rgba(201,165,106,.8);
+  letter-spacing: .6px;
+}
+
+/* =========================================
+   Footer height final compact (FIX)
+   ========================================= */
+
+/* Footer 自身：再薄一点 */
+.footer{
+  padding:8px 0 10px;
+}
+
+/* 右侧文字整体：行距压缩 */
+.footer-right{
+  line-height:1.45;          /* 关键：原来是 2.0 */
+  font-size:12.5px;
+}
+
+/* 每一行：不要再给额外 margin */
+.footer-right .info-line{
+  margin-bottom:2px;
+}
+
+/* 营业时间 block：压到最小 */
+.footer-right .info-block{
+  margin:4px 0 4px;
+  line-height:1.45;
+}
+
+/* block 内部的小字 */
+.footer-right .small{
+  line-height:1.35;
+}
+
+/* 最后一行版权：几乎贴底 */
+.footer-right .info-line:last-child{
+  margin-bottom:0;
+}
+
+
+
