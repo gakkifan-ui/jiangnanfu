@@ -33,24 +33,317 @@
       <div class="wrap">
         <h1 class="page-title">メニュー</h1>
         <p class="muted">コースを中心に。内容は季節と仕入れにより変わります。</p>
+      
+        <div class="lux-tabs" style="margin-top:26px;">
+  <!-- Tabs（CSSだけで切り替え） -->
+  <input class="lux-tab-input" type="radio" name="luxTab" id="tab-lunch" checked>
+  <label class="lux-tab" for="tab-lunch">ランチ</label>
 
-        <div class="card" style="margin-top:14px;">
-          <h2 class="page-title" style="font-size:16px; margin:0;">コース</h2>
-          <ul class="list">
-            <li>季節のおまかせ（6品）</li>
-            <li>シェフズコース（8品）</li>
-            <li>ペアリング（アルコール／ノンアル）</li>
+  <input class="lux-tab-input" type="radio" name="luxTab" id="tab-dinner">
+  <label class="lux-tab" for="tab-dinner">ディナー</label>
+
+<details class="lux-notice-inline">
+  <summary class="lux-notice-btn">注意事項</summary>
+
+  <div class="lux-notice-panel">
+    <p class="lux-note">
+      予約内容のご変更やキャンセルはお手数ですがお電話にてご連絡下さい。キャンセルポリシーは以下の通りです。
+    </p>
+
+    <div class="lux-notice-grid">
+      <div>
+        <p class="lux-option-title">予約のキャンセル</p>
+        <ul class="lux-bullets">
+          <li>当日 連絡なし：100%</li>
+          <li>当日 連絡あり：100%</li>
+          <li>1日前 00:00〜：50%</li>
+          <li>2日前 00:00〜：30%</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="lux-option-title">予約のご変更</p>
+        <ul class="lux-bullets">
+          <li>当日 連絡なし：100%</li>
+          <li>当日 連絡あり：100%</li>
+          <li>1日前 00:00〜：50%</li>
+          <li>2日前 00:00〜：30%</li>
+        </ul>
+      </div>
+    </div>
+
+    <ul class="lux-bullets small" style="margin-top:12px;">
+      <li>※上記価格には消費税が含まれております。</li>
+      <li>※アレルギーや苦手な食材がある場合は予めご相談ください。</li>
+      <li>※宴席の予約は3日前の21時までにご連絡をお願い致します。</li>
+      <li>※お人数の変更は前日の21時までとさせて頂きます。</li>
+      <li>※仕入れの都合上、内容を変更する場合がございます。</li>
+    </ul>
+  </div>
+</details>
+
+
+  <div class="lux-panels">
+    <!-- ランチ -->
+    <section class="lux-panel lux-panel-lunch">
+      <div class="lux-card">
+        <h2 class="lux-title">ランチ</h2>
+        <p class="lux-note">
+          ランチコースの詳細は準備中です。内容・料金は季節と仕入れにより変わりますので、最新情報は店舗までお問い合わせください。
+        </p>
+      </div>
+
+      <div class="lux-card">
+        <h3 class="lux-subtitle">ご案内</h3>
+        <ul class="lux-bullets">
+          <li>アレルギー・お苦手食材はご予約時にお知らせください。</li>
+          <li>内容は季節と仕入れにより変更となる場合がございます。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ディナー -->
+    <section class="lux-panel lux-panel-dinner">
+      <div class="lux-card lux-dinner-head">
+  <div>
+    <h2 class="lux-title">ディナー</h2>
+    <p class="lux-note">
+      コース料理をご用意しております。ご用途（接待・会食・ご宴席）に合わせてお選びください。
+    </p>
+  </div>
+
+  <!-- 注意事項按钮 -->
+  <details class="lux-notice-float">
+    <summary class="lux-notice-btn">注意事項</summary>
+
+    <div class="lux-notice-panel">
+      <p class="lux-note">
+        予約内容のご変更やキャンセルはお電話にてご連絡下さい。キャンセルポリシーは以下の通りです。
+      </p>
+
+      <div class="lux-notice-grid">
+        <div>
+          <p class="lux-option-title">予約のキャンセル</p>
+          <ul class="lux-bullets">
+            <li>当日 連絡なし：100%</li>
+            <li>当日 連絡あり：100%</li>
+            <li>1日前 00:00〜：50%</li>
+            <li>2日前 00:00〜：30%</li>
           </ul>
-          <p class="muted small" style="margin-top:10px;">※ アレルギー・お苦手食材はご予約時にお知らせください。</p>
         </div>
 
-        <div class="card" style="margin-top:14px;">
-          <h2 class="page-title" style="font-size:16px; margin:0;">料理の方向性</h2>
-          <p class="muted" style="margin-top:8px;">
-            江南・上海の味わいを核に、フレンチ／イタリアンの技法で端正に。
-            軽やかなソース、温度、余韻を大切にします。
-          </p>
+        <div>
+          <p class="lux-option-title">予約のご変更</p>
+          <ul class="lux-bullets">
+            <li>当日 連絡なし：100%</li>
+            <li>当日 連絡あり：100%</li>
+            <li>1日前 00:00〜：50%</li>
+            <li>2日前 00:00〜：30%</li>
+          </ul>
         </div>
+      </div>
+
+      <ul class="lux-bullets small" style="margin-top:12px;">
+        <li>※上記価格には消費税が含まれております。</li>
+        <li>※アレルギーや苦手な食材がある場合は予めご相談ください。</li>
+        <li>※宴席の予約は3日前の21時までにご連絡をお願い致します。</li>
+        <li>※お人数の変更は前日の21時までとさせて頂きます。</li>
+        <li>※仕入れの都合上、内容を変更する場合がございます。</li>
+      </ul>
+    </div>
+  </details>
+</div>
+
+
+      <!-- 1) 冬の牡丹コース -->
+      <details class="lux-course" open>
+        <summary class="lux-course-sum">
+          <span class="lux-course-name">冬の牡丹コース</span>
+          <span class="lux-course-meta">
+            <span class="lux-badge">全8品</span>
+            <span class="lux-price">¥8,800（税込）</span>
+          </span>
+        </summary>
+
+        <div class="lux-course-body">
+          <p class="lux-desc">
+            厳選素材を使用したおすすめコース。姫松茸スープ、大ぶり海老炒め、国産黒毛和牛のX.O醤ソース、酸湯白身魚など老舗の味をお楽しみいただけます。
+          </p>
+
+          <div class="lux-grid">
+            <div class="lux-grid-item"><span>滞在可能時間</span><b>2時間</b></div>
+            <div class="lux-grid-item"><span>飲み放題</span><b>追加可（2名様以上）</b></div>
+          </div>
+
+          <ol class="lux-list">
+            <li>5種冷菜盛り合わせ</li>
+            <li>自家製春巻二種類</li>
+            <li>姫松茸スープ</li>
+            <li>大ぶり海老炒め</li>
+            <li>国産黒毛和牛のX.O醤ソース</li>
+            <li>酸湯白身魚</li>
+            <li>本日のお食事</li>
+            <li>デザート</li>
+          </ol>
+
+          <div class="lux-option">
+            <p class="lux-option-title">飲み放題（2時間制）</p>
+            <p class="lux-option-text">お一人様：コース代金＋2,500円（消費税10％込み）</p>
+            <p class="lux-option-text small">瓶ビール・紹興酒・レモンサワー・ウイスキー・梅酒・ノンアルコール飲料・ソフトドリンク</p>
+          </div>
+        </div>
+      </details>
+
+      <!-- 2) 宴会コース＋2H飲み放題付 -->
+      <details class="lux-course">
+        <summary class="lux-course-sum">
+          <span class="lux-course-name">宴会コース＋2H飲み放題付</span>
+          <span class="lux-course-meta">
+            <span class="lux-badge">全7品</span>
+            <span class="lux-price">¥11,000（税込）</span>
+          </span>
+        </summary>
+
+        <div class="lux-course-body">
+          <p class="lux-desc">
+            大事なご宴席におすすめ。蟹肉入りフカヒレのスープ、大ぶり海老ととびっこ炒め、国産黒毛和牛 自家製X.O.ソース炒め、江南府特製麻婆豆腐などをお楽しみください。
+          </p>
+
+          <div class="lux-grid">
+            <div class="lux-grid-item"><span>利用可能人数</span><b>4～30名様</b></div>
+            <div class="lux-grid-item"><span>滞在可能時間</span><b>2時間</b></div>
+            <div class="lux-grid-item"><span>飲み放題</span><b>込み（2時間制）</b></div>
+          </div>
+
+          <ul class="lux-list">
+            <li><b>前菜</b>：前菜の盛り合わせ／本日の春巻</li>
+            <li><b>主菜</b>：蟹肉入りフカヒレのスープ／大ぶり海老ととびっこ炒め／国産黒毛和牛 自家製X.O.ソース炒め</li>
+            <li><b>主食</b>：江南府特製麻婆豆腐（ご飯添え）</li>
+            <li><b>甜品</b>：デザート</li>
+          </ul>
+
+          <div class="lux-option">
+            <p class="lux-option-title">飲み放題（2時間制）</p>
+            <p class="lux-option-text small">瓶ビール・紹興酒・レモンサワー・ウイスキー・梅酒・ノンアルコール飲料・ソフトドリンク</p>
+          </div>
+        </div>
+      </details>
+
+      <!-- 3) 冬の木蓮コース -->
+      <details class="lux-course">
+        <summary class="lux-course-sum">
+          <span class="lux-course-name">冬の木蓮コース</span>
+          <span class="lux-course-meta">
+            <span class="lux-badge">全8品</span>
+            <span class="lux-price">¥13,800（税込）</span>
+          </span>
+        </summary>
+
+        <div class="lux-course-body">
+          <p class="lux-desc">
+            希少な食材を贅沢に。浮袋・絹笠茸入り姫松茸スープ、名物フカヒレ上海風煮込み、国産黒毛和牛の煮込みなどをお楽しみいただけます。
+          </p>
+
+          <div class="lux-grid">
+            <div class="lux-grid-item"><span>滞在可能時間</span><b>2時間</b></div>
+            <div class="lux-grid-item"><span>飲み放題</span><b>追加可（2名様以上）</b></div>
+          </div>
+
+          <ol class="lux-list">
+            <li>6種冷菜盛り合わせ</li>
+            <li>自家製春巻二種類</li>
+            <li>浮袋、絹笠茸入り姫松茸スープ</li>
+            <li>名物フカヒレの上海風煮込み</li>
+            <li>大ぶり海老炒め</li>
+            <li>国産黒毛和牛の煮込み（季節野菜添え）</li>
+            <li>本日のお食事</li>
+            <li>デザート</li>
+          </ol>
+
+          <div class="lux-option">
+            <p class="lux-option-title">飲み放題（2時間制）</p>
+            <p class="lux-option-text">お一人様：コース代金＋2,500円（消費税10％込み）</p>
+            <p class="lux-option-text small">瓶ビール・紹興酒・レモンサワー・ウイスキー・梅酒・ノンアルコール飲料・ソフトドリンク</p>
+          </div>
+        </div>
+      </details>
+
+      <!-- 4) 上海蟹コース -->
+      <details class="lux-course">
+        <summary class="lux-course-sum">
+          <span class="lux-course-name">上海蟹コース</span>
+          <span class="lux-course-meta">
+            <span class="lux-badge">季節限定</span>
+            <span class="lux-price">¥23,000（税込）</span>
+          </span>
+        </summary>
+
+        <div class="lux-course-body">
+          <p class="lux-desc">
+            産地空輸直送の上海蟹を丸ごと姿蒸しで。酔蟹、ふかひれスープ、上海蟹みそあんかけそばなど、蟹の旨味をご堪能ください。
+          </p>
+
+          <div class="lux-grid">
+            <div class="lux-grid-item"><span>滞在可能時間</span><b>2時間</b></div>
+            <div class="lux-grid-item"><span>姿蒸し</span><b>メス（オス変更 +1,600円）</b></div>
+          </div>
+
+          <ul class="lux-list">
+            <li><b>前菜</b>：紹興酒漬け上海蟹（メス半身）入り、冷菜盛り合わせ／自家製春巻二種類</li>
+            <li><b>湯菜</b>：ふかひれスープ</li>
+            <li><b>主菜</b>：上海蟹姿蒸し（メス）／季節野菜炒め／海老塩味炒め</li>
+            <li><b>主食</b>：上海蟹味噌あんかけそば</li>
+            <li><b>甜品</b>：デザート</li>
+          </ul>
+
+          <p class="lux-warn small">※仕入状況により、予告なく内容が変更になる場合がございます。</p>
+        </div>
+      </details>
+
+      <!-- 5) 江南府コース -->
+      <details class="lux-course">
+        <summary class="lux-course-sum">
+          <span class="lux-course-name">江南府コース</span>
+          <span class="lux-course-meta">
+            <span class="lux-badge">特別</span>
+            <span class="lux-price">¥27,500（税込）</span>
+          </span>
+        </summary>
+
+        <div class="lux-course-body">
+          <p class="lux-desc">
+            中国名菜と高級食材を贅沢に。佛跳牆、伊勢海老、自家製XOソース、上海蟹みそなど、江南府の真髄を一夜に。
+          </p>
+
+          <div class="lux-grid">
+            <div class="lux-grid-item"><span>滞在可能時間</span><b>2時間</b></div>
+            <div class="lux-grid-item"><span>おすすめ</span><b>ご接待・記念日</b></div>
+          </div>
+
+          <ul class="lux-list">
+            <li><b>前菜</b>：前菜盛り合わせ／活車海老紹興酒漬け</li>
+            <li><b>点心</b>：春巻き二種類</li>
+            <li><b>湯菜</b>：佛跳牆</li>
+            <li><b>主菜</b>：伊勢海老自家製XOソース炒め／国産黒毛和牛の煮込み（江南府仕立て）／上海蟹みそあんかけ豆腐／シェフオススメ季節野菜炒め</li>
+            <li><b>主食</b>：ロブスターだし雑炊</li>
+            <li><b>甜品</b>：デザート</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="lux-card" style="margin-top:18px;">
+        <h3 class="lux-subtitle">ご案内</h3>
+        <ul class="lux-bullets">
+          <li>アレルギー・お苦手食材はご予約時にお知らせください。</li>
+          <li>内容は季節と仕入れにより変更となる場合がございます。</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
+
+        
+        
       </div>
     </section>
   </main>

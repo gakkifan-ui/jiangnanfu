@@ -512,3 +512,860 @@ a[href^="tel"]:focus{
   border-color: rgba(201,165,106,.45);
   background: rgba(201,165,106,.06);
 }
+
+
+/* =========================================
+   HERO bottom NEWS – Dark Glass (Luxury)
+   ========================================= */
+
+.hero-min{
+  position: relative;
+  padding-bottom: 140px; /* 给底部信息条留空间 */
+}
+
+.hero-news{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  z-index: 3;
+  padding: 0 18px; /* 避免小屏贴边 */
+}
+
+.hero-news-inner{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  border-radius: 14px;
+
+  /* 更融入深色主视觉：炭黑玻璃 */
+  background: rgba(10, 10, 10, 0.42);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow:
+    0 18px 46px rgba(0,0,0,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(10px);
+
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* 左侧 NEWS：欧式杂志感但不“金” */
+.hero-news .label{
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 12px;
+  letter-spacing: .30em;
+  text-transform: uppercase;
+  color: rgb(182, 166, 62);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.news-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.news-list li{
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 14px;
+  align-items: baseline;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.news-list li:last-child{
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.news-list time{
+  font-size: 12px;
+  letter-spacing: .06em;
+  color: rgba(210,210,205,0.55);
+  white-space: nowrap;
+}
+
+/* 文案：低对比高级感 */
+.news-list a{
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+/* hover：极克制，只微微提亮 */
+.news-list a:hover{
+  color: rgba(255,255,255,0.98);
+}
+
+/* 手机端：竖排更舒适 */
+@media (max-width: 768px){
+  .hero-min{ padding-bottom: 180px; }
+  .hero-news{ bottom: 10px; padding: 0 14px; }
+
+  .hero-news-inner{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .news-list li{
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .news-list a{
+    white-space: normal; /* 允许换行 */
+  }
+}
+
+/* =========================================
+   江南府字体优化
+   ========================================= */
+.hero-title {
+  color: #f2f0ea; /* 暖象牙白 */
+  font-family: "Hiragino Mincho ProN",
+               "Yu Mincho",
+               "Noto Serif CJK JP",
+               serif;
+  letter-spacing: 0.06em;
+}
+
+/* =========================================
+   Italian / French Luxury Typography
+   ========================================= */
+
+/* 主标题：江南府 */
+.hero-title {
+  font-family: "Cormorant Garamond",
+               "Hiragino Mincho ProN",
+               "Yu Mincho",
+               "Noto Serif CJK JP",
+               serif;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #f2f0ea; /* 暖象牙白 */
+}
+
+/* 英文副标题 */
+/*.hero-sub,
+.brand .en {
+  font-family: "Inter",
+               ui-sans-serif, system-ui, -apple-system,
+               "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(235,235,230,.65);
+}*/
+
+/* 正文 / 导航 / UI */
+body,
+.menu a,
+.btn-reserve,
+.hero-lead,
+.hero-desc,
+.news-list a,
+.news-list time {
+  font-family: "Inter",
+               ui-sans-serif, system-ui, -apple-system,
+               "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+
+.hero-title {
+  font-weight: 600;
+}
+
+
+/* =========================================
+   Hero lead subtle gold lines
+   ========================================= */
+
+.hero-lead{
+  position: relative;
+  padding: 18px 0; /* 给上下线留呼吸空间 */
+}
+
+/* =========================================
+   Hero lead underline – inset editorial
+   ========================================= */
+
+.hero-lead{
+  position: relative;
+  display: inline-block;   /* 宽度 = 文字 */
+  padding-bottom: 8px;     /* 线贴近文字 */
+}
+
+/* 下方细线：不超过文字，两侧空一个字 */
+.hero-lead::after{
+  content: "";
+  position: absolute;
+  left: 1em;               /* 左侧空一个字 */
+  right: 1em;              /* 右侧空一个字 */
+  bottom: 0;
+  height: 1px;
+
+  /* 极淡香槟金（编辑级） */
+  background: rgba(205,187,147,0.26);
+}
+
+/* =========================================
+   Hero lead color (Italian / French luxury)
+   ========================================= */
+
+.hero-lead {
+  color: rgba(235, 235, 230, 0.88);
+}
+
+/* =========================================
+   Header brand – refined (Italian/French)
+   ========================================= */
+
+/* 中文：像缩小版 Logo */
+.brand .cn {
+  font-family: "Cormorant Garamond",
+               "Hiragino Mincho ProN",
+               "Yu Mincho",
+               "Noto Serif CJK JP",
+               serif;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+
+  /* 比 Hero 稍暗，避免抢戏 */
+  color: rgba(235, 235, 230, 0.90);
+}
+
+/* 英文：更轻、更克制 */
+.brand .en {
+  font-family: "Inter",
+               ui-sans-serif, system-ui, -apple-system,
+               "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: 11px;              /* 比现在小一点更高级 */
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+
+  color: rgba(220, 220, 215, 0.55);
+}
+
+/* =========================================
+   Brand system – unify header & hero
+   ========================================= */
+
+/* ===== 中文品牌：江南府 ===== */
+.hero-title,
+.brand .cn {
+  font-family: "Cormorant Garamond",
+               "Hiragino Mincho ProN",
+               "Yu Mincho",
+               "Noto Serif CJK JP",
+               serif;
+  letter-spacing: 0.06em;
+}
+
+/* Hero 主品牌（更亮、更大） */
+.hero-title {
+  font-weight: 600;
+  color: rgba(242, 240, 234, 0.96);
+}
+
+/* Header 品牌（缩小版 Logo） */
+.brand .cn {
+  font-weight: 500;
+  color: rgba(235, 235, 230, 0.88);
+}
+
+/* ===== 英文品牌：JIANGNAN FU ===== */
+.hero-sub,
+.brand .en {
+  font-family: "Inter",
+               ui-sans-serif, system-ui, -apple-system,
+               "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+/* Hero 英文 */
+.hero-sub {
+  font-size: 14px;
+  color: rgba(220, 220, 215, 0.70);
+}
+
+/* Header 英文 */
+.brand .en {
+  font-size: 11px;
+  color: rgba(220, 220, 215, 0.55);
+}
+
+
+/* =========================================
+   Brand size system – final
+   ========================================= */
+
+/* Hero brand */
+.hero-title {
+  font-size: 56px;
+  font-weight: 600;
+}
+
+/* Header brand (logo-size) */
+.brand .cn {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+/* English brand */
+.hero-sub {
+  font-size: 14px;
+  letter-spacing: 0.24em;
+}
+
+.brand .en {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+}
+
+/* =========================================
+   English brand – Playfair Display (wide)
+   ========================================= */
+
+.hero-sub,
+.brand .en {
+  font-family: "Playfair Display",
+               "Times New Roman",
+               serif;
+
+  font-weight: 500;
+  letter-spacing: 0.26em; /* 关键：宽但不散 */
+}
+
+
+
+
+/* Hero 英文（主 Logo 基线） */
+.hero-sub {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 20px;
+  letter-spacing: 0.32em;
+  font-weight: 500;
+  color: rgba(220, 220, 215, 0.70);
+}
+
+
+/* Header 英文（缩小版 Logo） */
+.brand .en {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 10px;          /* 明确更小 */
+  letter-spacing: 0.22em;   /* 明确更紧 */
+  font-weight: 500;
+  color: rgba(220, 220, 215, 0.55);
+}
+
+
+/* Step 1: very subtle tone change for 府 */
+.hero-title .accent-fu{
+  color: rgba(242,240,234,0.85);
+}
+
+
+/* Diagonal subtle highlight for 府 (ivory → champagne) */
+.hero-title .accent-fu{
+  background: linear-gradient(
+    135deg, /* 右上 → 左下 */
+    rgba(242,240,234,0.96) 0%,
+    rgba(242,240,234,0.96) 52%,
+    rgba(205,187,147,0.42) 70%,
+    rgba(242,240,234,0.96) 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* =========================================
+   3-char sheens for 江南府 (FIX: no squares)
+   ========================================= 
+
+.hero-title .fu-sheen{
+  display: inline; /* 关键：不要让它变成块 
+  line-height: 1;
+  /* 文字渐变：必须三件套 
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 江：左上轻扫光 
+.hero-title .sheen-jiang{
+  background-image: linear-gradient(
+    135deg,
+    rgba(205,187,147,0.40) 0%,
+    rgba(242,240,234,0.98) 28%,
+    rgba(242,240,234,0.98) 100%
+  );
+}
+
+/* 南：中间最轻扫光 
+.hero-title .sheen-nan{
+  background-image: linear-gradient(
+    135deg,
+    rgba(242,240,234,0.98) 0%,
+    rgba(242,240,234,0.98) 44%,
+    rgba(205,187,147,0.30) 56%,
+    rgba(242,240,234,0.98) 70%,
+    rgba(242,240,234,0.98) 100%
+  );
+}
+
+/* 府：右下尾部扫光 
+.hero-title .sheen-fu{
+  background-image: linear-gradient(
+    135deg,
+    rgba(242,240,234,0.98) 0%,
+    rgba(242,240,234,0.98) 58%,
+    rgba(205,187,147,0.42) 78%,
+    rgba(242,240,234,0.98) 100%
+  );
+}
+*/
+
+
+
+/* Tighten spacing for 江南府 characters */
+.hero-title{
+  letter-spacing: -0.5em;
+}
+
+
+/* 最后一个字不要吃 margin */
+.hero-title .fu-sheen:last-child{
+  margin-right: 0;
+}
+
+
+/* Hero 主要标题 */
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  letter-spacing: 0.04em; /* 轻微拉开更高级 */
+}
+
+/* Hero 英文副标 */
+.hero-sub {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  letter-spacing: 0.28em;
+  font-weight: 500;
+}
+
+/* 正文 / 导航 */
+body,
+.menu a {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+.hero-title{
+  letter-spacing: -0.05em;
+}
+
+
+/* Reservation buttons: 2x2 equal grid */
+.reserve-actions{
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 上2 下2 */
+  gap: 14px;
+}
+
+/* Make all buttons same height & centered */
+.reserve-actions .btn-reserve{
+  width: 100%;
+  height: 52px;              /* 统一高度（可调） */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.reserve-actions{
+  margin: 16px 0 0 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 400px;
+}
+
+.reserve-actions .btn-reserve{
+  height: 42px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================
+   菜单
+   ========================================= */
+   /* ===== Luxury Black & Gold (Menu Tabs + Courses) ===== */
+.lux-tabs {
+  --gold: #d6b26a;
+  --gold2: rgba(214, 178, 106, 0.25);
+  --line: rgba(255, 255, 255, 0.10);
+  --text: rgba(255, 255, 255, 0.86);
+  --muted: rgba(255, 255, 255, 0.60);
+  --card: rgba(0, 0, 0, 0.35);
+  --card2: rgba(255, 255, 255, 0.03);
+
+  margin-top: 18px;
+}
+
+.lux-tab-input { display: none; }
+
+.lux-tab {
+  display: inline-block;
+  padding: 12px 18px;
+  margin-right: 10px;
+  border: 1px solid var(--gold2);
+  color: var(--muted);
+  letter-spacing: 0.18em;
+  font-size: 13px;
+  cursor: pointer;
+  background: linear-gradient(to bottom, var(--card2), transparent);
+}
+
+#tab-lunch:checked + .lux-tab,
+#tab-dinner:checked + .lux-tab {
+  color: var(--gold);
+  border-color: rgba(214, 178, 106, 0.65);
+  box-shadow: 0 0 0 1px rgba(214, 178, 106, 0.18) inset;
+}
+
+.lux-panels {
+  margin-top: 18px;
+  border-top: 1px solid rgba(214, 178, 106, 0.18);
+  padding-top: 18px;
+}
+
+.lux-panel { display: none; }
+
+#tab-lunch:checked ~ .lux-panels .lux-panel-lunch { display: block; }
+#tab-dinner:checked ~ .lux-panels .lux-panel-dinner { display: block; }
+
+.lux-card {
+  background: var(--card);
+  border: 1px solid rgba(214, 178, 106, 0.18);
+  padding: 18px 18px;
+  margin-bottom: 14px;
+}
+
+.lux-title {
+  margin: 0 0 8px;
+  color: var(--gold);
+  letter-spacing: 0.22em;
+  font-size: 18px;
+}
+
+.lux-subtitle {
+  margin: 0 0 10px;
+  color: var(--gold);
+  letter-spacing: 0.18em;
+  font-size: 14px;
+}
+
+.lux-note {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 13px;
+}
+
+.lux-bullets {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 13px;
+}
+
+/* Courses accordion */
+.lux-course {
+  border: 1px solid rgba(214, 178, 106, 0.18);
+  background: rgba(0, 0, 0, 0.25);
+  margin: 12px 0;
+}
+
+.lux-course-sum {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lux-course-sum::-webkit-details-marker { display: none; }
+
+.lux-course-name {
+  color: var(--text);
+  letter-spacing: 0.08em;
+  font-size: 14px;
+}
+
+.lux-course-meta {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.lux-badge {
+  border: 1px solid rgba(214, 178, 106, 0.35);
+  color: var(--gold);
+  padding: 3px 8px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+.lux-price {
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.lux-course-body {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 16px 16px;
+  color: var(--muted);
+}
+
+.lux-desc {
+  margin: 0 0 12px;
+  line-height: 1.9;
+  font-size: 13px;
+}
+
+.lux-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0 14px;
+}
+
+.lux-grid-item {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 10px;
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.lux-grid-item span { color: rgba(255,255,255,0.55); }
+.lux-grid-item b { color: rgba(255,255,255,0.85); font-weight: 600; }
+
+.lux-list {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.9;
+  font-size: 13px;
+}
+.lux-list li { padding: 2px 0; }
+
+.lux-option {
+  margin-top: 12px;
+  padding: 12px 12px;
+  border: 1px solid rgba(214, 178, 106, 0.18);
+  background: rgba(214, 178, 106, 0.06);
+}
+
+.lux-option-title {
+  margin: 0 0 6px;
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.lux-option-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.small { font-size: 12px; }
+
+.lux-warn {
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(214, 178, 106, 0.25);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* mobile */
+@media (max-width: 720px) {
+  .lux-tab { margin-bottom: 8px; }
+  .lux-grid { grid-template-columns: 1fr; }
+  .lux-course-sum { flex-direction: column; align-items: flex-start; }
+}
+
+/* =========================================
+   注意事项
+   ========================================= */
+   /* ===== Dinner header with floating notice ===== */
+.lux-dinner-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px; /* ← 就是你说的“离得远一些” */
+}
+
+/* Notice button */
+.lux-notice-float {
+  position: relative;
+}
+
+.lux-notice-btn {
+  list-style: none;
+  cursor: pointer;
+  border: 1px solid rgba(214,178,106,0.45);
+  color: #d6b26a;
+  padding: 8px 14px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  background: rgba(214,178,106,0.06);
+}
+
+.lux-notice-btn::-webkit-details-marker {
+  display: none;
+}
+
+/* Panel */
+.lux-notice-panel {
+  position: absolute;
+  right: 0;
+  margin-top: 10px;
+  width: 420px;
+  max-width: 80vw;
+  background: rgba(0,0,0,0.92);
+  border: 1px solid rgba(214,178,106,0.35);
+  padding: 14px 14px;
+  z-index: 10;
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .lux-dinner-head {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .lux-notice-panel {
+    position: static;
+    width: 100%;
+  }
+}
+
+/* =========================================
+   注意事项2
+   ========================================= */
+   /* ===== Inline notice button (add-only) ===== */
+.lux-notice-inline {
+  float: right;           /* ← 核心：推到右边 */
+  margin-top: -42px;      /* ← 拉到和 tabs 同一行 */
+  position: relative;
+}
+
+.lux-notice-inline .lux-notice-btn {
+  list-style: none;
+  cursor: pointer;
+  border: 1px solid rgba(214,178,106,0.55);
+  color: #d6b26a;
+  padding: 8px 14px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  background: rgba(214,178,106,0.06);
+}
+
+.lux-notice-inline .lux-notice-btn::-webkit-details-marker {
+  display: none;
+}
+
+.lux-notice-inline .lux-notice-panel {
+  position: absolute;
+  right: 0;
+  margin-top: 10px;
+  width: 420px;
+  max-width: 80vw;
+  background: rgba(0,0,0,0.92);
+  border: 1px solid rgba(214,178,106,0.35);
+  padding: 14px;
+  z-index: 30;
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .lux-notice-inline {
+    float: none;
+    margin-top: 12px;
+  }
+
+  .lux-notice-inline .lux-notice-panel {
+    position: static;
+    width: 100%;
+  }
+}
+
+
+
+/* ===== FIX: 外侧注意事項回到 tabs 同一行（不影响内侧 notice-float） ===== */
+
+/* 让 tab 区变成“可换行”的 flex：第一行放按钮+注意事項，第二行放 panels */
+.lux-tabs{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+  padding-right: 0 !important;     /* 取消之前预留空间 */
+  position: static !important;     /* 取消之前 relative/absolute 方案 */
+}
+
+/* 外侧注意事項：用 margin-left:auto 推到最右边（就在按钮那一行） */
+.lux-tabs > details.lux-notice-inline{
+  position: static !important;
+  margin-left: auto;
+  margin-top: 0 !important;
+  float: none !important;
+  align-self: flex-end;
+}
+
+/* panels 强制换到下一行，占满整行 */
+.lux-tabs > .lux-panels{
+  flex: 0 0 100%;
+  width: 100%;
+  margin-top: 18px; /* 让它和按钮行拉开一点 */
+}
+
+/* ===== 外侧 注意事項 按钮大小 ===== */
+.lux-tabs > details.lux-notice-inline > summary.lux-notice-btn{
+  height: 44px;          /* 高度（想大就 46/48） */
+  padding: 0 18px;       /* 左右宽度（想宽就 20/22） */
+  font-size: 12px;       /* 字号 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+
+
