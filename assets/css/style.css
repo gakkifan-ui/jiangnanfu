@@ -1358,14 +1358,95 @@ body,
 
 /* ===== 外侧 注意事項 按钮大小 ===== */
 .lux-tabs > details.lux-notice-inline > summary.lux-notice-btn{
-  height: 44px;          /* 高度（想大就 46/48） */
-  padding: 0 18px;       /* 左右宽度（想宽就 20/22） */
-  font-size: 12px;       /* 字号 */
+  height: 44px;          /* 高*/
+  padding: 0 18px;       /* 宽*/
+  font-size: 12px;      
   display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
 }
 
+/* Mobile */
+/* ===== Mobile hamburger nav (JS) ===== */
+.nav-toggle{
+  display:none;
+  border:1px solid rgba(214,178,106,0.55);
+  background: rgba(214,178,106,0.06);
+  color:#d6b26a;
+  padding:10px 14px;
+  font-size:16px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.nav-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 999;
+}
+
+.mobile-nav{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(86vw, 380px);
+  height: 100vh;
+  background: rgba(0,0,0,0.92);
+  border-left: 1px solid rgba(214,178,106,0.35);
+  z-index: 1000;
+  padding: 18px 16px;
+  transform: translateX(100%);
+  transition: transform .25s ease;
+}
+
+.mobile-nav.is-open{
+  transform: translateX(0);
+}
+
+.mobile-nav-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom: 12px;
+}
+
+.mobile-nav-title{
+  color:#d6b26a;
+  letter-spacing:.2em;
+  font-size:12px;
+}
+
+.nav-close{
+  border:1px solid rgba(214,178,106,0.35);
+  background: rgba(214,178,106,0.06);
+  color:#d6b26a;
+  padding:8px 10px;
+  cursor:pointer;
+}
+
+.mobile-nav-links{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding-top: 6px;
+}
+
+.mobile-nav-links a{
+  display:block;
+  padding:12px 10px;
+  border:1px solid rgba(214,178,106,0.18);
+  background: rgba(255,255,255,0.02);
+  text-decoration:none;
+}
+
+/* Desktop: keep your normal nav; Mobile: show hamburger & optionally hide desktop links */
+@media (max-width: 900px){
+  .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+  /* 这一行如果你想手机上隐藏原来的横向菜单，就取消注释 */
+  /* .menu{ display:none; } */
+}
 
 
