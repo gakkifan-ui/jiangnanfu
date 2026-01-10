@@ -70,7 +70,8 @@ p{ margin:0 0 12px; }
 .nav-right{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:12px;
+  margin-left:auto;
 }
 
 .menu{
@@ -1378,6 +1379,9 @@ body,
   font-size:16px;
   line-height:1;
   cursor:pointer;
+  margin-left: 0;
+
+  order: 999; /* 强制放最右边 */
 }
 
 .nav-overlay{
@@ -1442,11 +1446,12 @@ body,
   text-decoration:none;
 }
 
-/* Desktop: keep your normal nav; Mobile: show hamburger & optionally hide desktop links */
-@media (max-width: 900px){
-  .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
-  /* 这一行如果你想手机上隐藏原来的横向菜单，就取消注释 */
-  /* .menu{ display:none; } */
+
+/* ② 手机端：才显示汉堡按钮 */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
-
-
