@@ -1455,3 +1455,144 @@ body,
     justify-content: center;
   }
 }
+
+
+/* =========================================
+   手机按键优化对齐
+   ========================================= */
+   /* ===== FIX: ランチ / ディナー / 注意事項 在手机端对齐 + 尺寸统一 ===== */
+
+/* 顶部这一行：左边 tabs，右边 注意事項 */
+.lux-top-row{
+  display: flex;
+  align-items: center;         /* ✅ 垂直居中对齐 */
+  gap: 14px;
+}
+
+/* ランチ/ディナー 这一组 */
+.lux-tabs{
+  display: flex;
+  align-items: center;         /* ✅ 垂直居中对齐 */
+  gap: 10px;
+}
+
+/* 让右侧 注意事項 永远靠最右 */
+.lux-top-row .lux-notice-inline{
+  margin-left: auto;
+}
+
+/* 三个按钮统一尺寸（关键） */
+.lux-tab,
+.lux-notice-btn{
+  height: 48px;                /* ✅ 统一高度 */
+  min-width: 140px;            /* ✅ 统一宽度（你可改 130/150 看喜好） */
+  padding: 0 22px;             /* ✅ 左右内边距 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;              /* ✅ 避免文字把高度撑歪 */
+  box-sizing: border-box;
+  font-size: 14px;             /* ✅ 统一字号（可改） */
+  letter-spacing: .08em;       /* ✅ 更像酒店官网按钮 */
+}
+
+/* 手机更窄时：允许换行，但按钮依然等高等宽 */
+@media (max-width: 520px){
+  .lux-top-row{
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .lux-tabs{
+    flex-wrap: wrap;
+  }
+  .lux-top-row .lux-notice-inline{
+    margin-left: 0;
+  }
+}
+
+/* =========================================================
+   外侧注意往上方贴右侧
+   ========================================================= */
+
+/* ===== Mobile: 把「外侧 注意事項(lux-notice-inline)」放到右上预约按钮下方 ===== */
+@media (max-width: 900px){
+  /* 只选中 tabs 里的外侧注意事項，避免影响ディナー里面的 lux-notice-float */
+  .lux-tabs > details.lux-notice-inline{
+    position: fixed !important;
+    right: 16px !important;
+    top: 78px !important;           /* ✅ 这里控制“在预约按钮下方”的高度：70~95 都可以试 */
+    float: none !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+  }
+
+  /* 展开面板：贴着按钮向下展开（仍然在右侧） */
+  .lux-tabs > details.lux-notice-inline .lux-notice-panel{
+    position: absolute !important;
+    right: 0 !important;
+    top: calc(100% + 10px) !important;
+    width: min(420px, 86vw) !important;
+  }
+}
+
+/* =========================================
+   PC注意事项浮动优化
+   ========================================= */
+   /* PC 端也固定到右上（预约按钮下方） */
+@media (min-width: 901px){
+  .lux-tabs > details.lux-notice-inline{
+    position: fixed !important;
+    right: 24px !important;
+    top: 92px !important;     /* PC 的 header 通常更高一点 */
+    margin: 0 !important;
+    float: none !important;
+    z-index: 9999 !important;
+  }
+
+  .lux-tabs > details.lux-notice-inline .lux-notice-panel{
+    position: absolute !important;
+    right: 0 !important;
+    top: calc(100% + 10px) !important;
+    width: 420px !important;
+  }
+}
+
+/* =========================================
+   按钮大小
+   ========================================= */
+   .lux-notice-btn{
+  height: 45px;
+  min-width: 70px;
+  font-size: 13px;
+}
+
+/* ===== 外侧 注意事項 按钮（只改这个，不影响内侧） ===== */
+.lux-tabs > details.lux-notice-inline > summary.lux-notice-btn{
+  height: 42px;           /* 按钮高度（可改 32 / 36） */
+  min-width: 100px;        /* 按钮宽度（可改 80 / 96） */
+  padding: 0 12px;        /* 左右内边距 */
+  font-size: 13px;        /* 字号 */
+  letter-spacing: .04em;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ===== ランチ / ディナー 两个按钮固定同宽 + 真的变窄 ===== */
+.lux-tabs label.lux-tab{
+  width: 80px !important;       /* ✅ 只改这个数字：想更窄用 84，想更宽用 100 */
+  height: 45px !important;
+
+  padding: 0 !important;        /* ✅ 关键：去掉旧 padding，否则永远看起来很宽 */
+  margin-right: 8px !important; /* ✅ 两个按钮之间间距（你也可改 6/10） */
+
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  white-space: nowrap !important;
+}
+
