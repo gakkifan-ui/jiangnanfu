@@ -64,8 +64,8 @@ p{ margin:0 0 12px; }
 }
 
 .brand{ line-height:1.1; }
-.brand .cn{ font-size:20px; letter-spacing:2px; }
-.brand .en{ font-size:11px; letter-spacing:4px; color:var(--muted); margin-top:4px; }
+
+
 
 .nav-right{
   display:flex;
@@ -99,28 +99,14 @@ p{ margin:0 0 12px; }
 }
 .lang:hover{ color:rgba(201,165,106,.9); border-color: rgba(201,165,106,.35); }
 
-.btn-reserve{
-  display:inline-block;
-  padding:10px 14px;
-  border-radius:14px;
-  border:1px solid rgba(201,165,106,.55);
-  background:rgba(201,165,106,.10);
-  font-size:13px;
-  letter-spacing:.6px;
-}
+
 .btn-reserve:hover{ transform:translateY(-1px); }
 
 /* ---------- Page spacing under fixed header ---------- */
 .page{ padding-top:88px; }
 
 /* ---------- Minimal Hero ---------- */
-.hero-min{
-  min-height:calc(100vh - 88px);
-  display:flex;
-  align-items:center;
-  position:relative;
-  padding: 18px 0;
-}
+
 
 .hero-min::before{
   content:"";
@@ -140,28 +126,10 @@ p{ margin:0 0 12px; }
   margin-bottom:14px;
 }
 
-.hero-title{
-  margin:12px 0 10px;
-  font-size:46px;
-  letter-spacing:6px;
-  line-height:1.12;
-}
-.hero-sub{
-  display:block;
-  margin-top:10px;
-  font-size:12px;
-  letter-spacing:5px;
-  color:var(--muted);
-  font-weight:600;
-}
 
-.hero-lead{
-  margin:18px 0 8px;
-  font-size:18px;
-  line-height:1.75;
-  letter-spacing:.6px;
-  max-width:60ch;
-}
+
+
+
 
 .hero-desc{
   color:var(--muted);
@@ -194,7 +162,7 @@ p{ margin:0 0 12px; }
 .list li{ margin: 8px 0; }
 
 .muted{ color: var(--muted); }
-.small{ font-size: 12.5px; }
+
 
 /* ---------- Form minimal ---------- */
 .input{
@@ -226,11 +194,7 @@ p{ margin:0 0 12px; }
 }
 
 /* ---------- Footer (gold line + dark bg) ---------- */
-.footer{
-  padding:20px 0 18px;
-  background:#0b0c10;
-  border-top:1px solid rgba(201,165,106,.6);
-}
+
 
 .footer-grid{
   display:flex;
@@ -257,16 +221,10 @@ p{ margin:0 0 12px; }
   letter-spacing:1px;
 }
 
-.footer-right{
-  text-align:right;
-  color:rgba(189,182,170,.95);
-  font-size:12.5px;
-  line-height:2.0;
-  letter-spacing:.35px;
-}
 
-.footer-right .info-line{ margin-bottom:6px; }
-.footer-right .info-block{ margin:10px 0 8px; line-height:1.8; }
+
+
+
 .footer-right .info-block > div:first-child{ letter-spacing:1.2px; }
 .footer-right .muted{ opacity:.85; }
 
@@ -295,13 +253,18 @@ p{ margin:0 0 12px; }
 
 /* Footer 自身：再薄一点 */
 .footer{
+  background:#0b0c10;
+  border-top:1px solid rgba(201,165,106,.6);
   padding:8px 0 10px;
 }
 
 /* 右侧文字整体：行距压缩 */
 .footer-right{
-  line-height:1.45;          /* 关键：原来是 2.0 */
+  color:rgba(189,182,170,.95);
   font-size:12.5px;
+  letter-spacing:.35px;
+  line-height:1.45;
+  text-align:right;
 }
 
 /* 每一行：不要再给额外 margin */
@@ -311,8 +274,8 @@ p{ margin:0 0 12px; }
 
 /* 营业时间 block：压到最小 */
 .footer-right .info-block{
-  margin:4px 0 4px;
   line-height:1.45;
+  margin:4px 0 4px;
 }
 
 /* block 内部的小字 */
@@ -330,66 +293,26 @@ p{ margin:0 0 12px; }
    Plates section (premium)
    ========================================================= */
 
-.plates{
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 14px;
-}
 
-.plate{
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: var(--radius);
-  background: rgba(255,255,255,.02);
-  overflow: hidden;
-}
 
-.plate-media{
-  position: relative;
-  aspect-ratio: 16 / 10;
-  background: rgba(255,255,255,.03);
-}
 
-.plate-media img{
-  width:100%;
-  height:100%;
-  object-fit: cover;
-  display:block;
-  filter: saturate(.98) contrast(1.02);
-  transform: scale(1.01);
-}
 
-.plate-body{
-  padding: 14px 14px 16px;
-}
 
-.plate-tag{
-  font-size: 11px;
-  letter-spacing: 2.6px;
-  color: rgba(201,165,106,.92);
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
 
-.plate-title{
-  margin: 0 0 8px;
-  font-size: 16px;
-  letter-spacing: .6px;
-}
 
-.plate-desc{
-  margin: 0;
-  color: rgba(189,182,170,.92);
-  font-size: 13px;
-  line-height: 1.75;
-}
+
+
+
+
+
+
+
+
 
 /* mobile */
 @media (max-width:860px){
-  .plates{
-    grid-template-columns: 1fr;
-  }
-  .plate-title{ font-size: 15px; }
+  
+  
 }
 
 
@@ -398,23 +321,23 @@ p{ margin:0 0 12px; }
    ========================================================= */
 
 .plates{
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 14px;
+  display:grid;
+  gap:14px;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  margin-top:18px;
 }
 
 .plate{
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: var(--radius);
-  background: rgba(255,255,255,.02);
-  overflow: hidden;
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);
+  overflow:hidden;
 }
 
 .plate-media{
-  position: relative;
-  aspect-ratio: 16 / 14;
-  background: rgba(255,255,255,.03);
+  aspect-ratio:16 / 14;
+  background:rgba(255,255,255,.03);
+  position:relative;
 }
 
 /* 没有图片时也高级：柔和光晕占位 */
@@ -443,43 +366,47 @@ p{ margin:0 0 12px; }
 }
 
 .plate-media img{
-  width:100%;
-  height:100%;
-  object-fit: cover;
   display:block;
-  filter: saturate(.98) contrast(1.02);
-  transform: scale(1.01);
+  filter:saturate(.98) contrast(1.02);
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.01);
+  width:100%;
 }
 
 .plate-body{
-  padding: 14px 14px 16px;
+  padding:14px 14px 16px;
 }
 
 .plate-tag{
-  font-size: 11px;
-  letter-spacing: 2.6px;
-  color: rgba(201,165,106,.92);
-  text-transform: uppercase;
-  margin-bottom: 6px;
+  color:rgba(201,165,106,.92);
+  font-size:11px;
+  letter-spacing:2.6px;
+  margin-bottom:6px;
+  text-transform:uppercase;
 }
 
 .plate-title{
-  margin: 0 0 8px;
-  font-size: 16px;
-  letter-spacing: .6px;
+  font-size:16px;
+  letter-spacing:.6px;
+  margin:0 0 8px;
 }
 
 .plate-desc{
-  margin: 0;
-  color: rgba(189,182,170,.92);
-  font-size: 13px;
-  line-height: 1.75;
+  color:rgba(189,182,170,.92);
+  font-size:13px;
+  line-height:1.75;
+  margin:0;
 }
 
 /* mobile */
 @media (max-width:860px){
-  .plates{ grid-template-columns: 1fr; }
-  .plate-title{ font-size: 15px; }
+  .plates{
+  grid-template-columns:1fr;
+}
+  .plate-title{
+  font-size:15px;
+}
 }
 
 
@@ -501,8 +428,14 @@ a[href^="tel"]:focus{
 
 /* 预约主按钮（已有 btn-reserve） */
 .btn-reserve{
-  transition: 
-    color .18s ease,
+  background:rgba(201,165,106,.10);
+  border:1px solid rgba(201,165,106,.55);
+  border-radius:14px;
+  display:inline-block;
+  font-size:13px;
+  letter-spacing:.6px;
+  padding:10px 14px;
+  transition:color .18s ease,
     border-color .18s ease,
     background-color .18s ease;
 }
@@ -520,8 +453,12 @@ a[href^="tel"]:focus{
    ========================================= */
 
 .hero-min{
-  position: relative;
-  padding-bottom: 140px; /* 给底部信息条留空间 */
+  align-items:center;
+  display:flex;
+  min-height:calc(100vh - 88px);
+  padding:18px 0;
+  padding-bottom:140px;
+  position:relative;
 }
 
 .hero-news{
@@ -635,30 +572,14 @@ a[href^="tel"]:focus{
 /* =========================================
    江南府字体优化
    ========================================= */
-.hero-title {
-  color: #f2f0ea; /* 暖象牙白 */
-  font-family: "Hiragino Mincho ProN",
-               "Yu Mincho",
-               "Noto Serif CJK JP",
-               serif;
-  letter-spacing: 0.06em;
-}
+
 
 /* =========================================
    Italian / French Luxury Typography
    ========================================= */
 
 /* 主标题：江南府 */
-.hero-title {
-  font-family: "Cormorant Garamond",
-               "Hiragino Mincho ProN",
-               "Yu Mincho",
-               "Noto Serif CJK JP",
-               serif;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  color: #f2f0ea; /* 暖象牙白 */
-}
+
 
 /* 英文副标题 */
 /*.hero-sub,
@@ -684,29 +605,20 @@ body,
                "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
 }
 
-.hero-title {
-  font-weight: 600;
-}
+
 
 
 /* =========================================
    Hero lead subtle gold lines
    ========================================= */
 
-.hero-lead{
-  position: relative;
-  padding: 18px 0; /* 给上下线留呼吸空间 */
-}
+
 
 /* =========================================
    Hero lead underline – inset editorial
    ========================================= */
 
-.hero-lead{
-  position: relative;
-  display: inline-block;   /* 宽度 = 文字 */
-  padding-bottom: 8px;     /* 线贴近文字 */
-}
+
 
 /* 下方细线：不超过文字，两侧空一个字 */
 .hero-lead::after{
@@ -726,7 +638,16 @@ body,
    ========================================= */
 
 .hero-lead {
-  color: rgba(235, 235, 230, 0.88);
+  color:rgba(235, 235, 230, 0.88);
+  display:inline-block;
+  font-size:18px;
+  letter-spacing:.6px;
+  line-height:1.75;
+  margin:18px 0 8px;
+  max-width:60ch;
+  padding:18px 0;
+  padding-bottom:8px;
+  position:relative;
 }
 
 /* =========================================
@@ -734,30 +655,10 @@ body,
    ========================================= */
 
 /* 中文：像缩小版 Logo */
-.brand .cn {
-  font-family: "Cormorant Garamond",
-               "Hiragino Mincho ProN",
-               "Yu Mincho",
-               "Noto Serif CJK JP",
-               serif;
-  font-weight: 500;
-  letter-spacing: 0.06em;
 
-  /* 比 Hero 稍暗，避免抢戏 */
-  color: rgba(235, 235, 230, 0.90);
-}
 
 /* 英文：更轻、更克制 */
-.brand .en {
-  font-family: "Inter",
-               ui-sans-serif, system-ui, -apple-system,
-               "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-  font-size: 11px;              /* 比现在小一点更高级 */
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
 
-  color: rgba(220, 220, 215, 0.55);
-}
 
 /* =========================================
    Brand system – unify header & hero
@@ -775,38 +676,19 @@ body,
 }
 
 /* Hero 主品牌（更亮、更大） */
-.hero-title {
-  font-weight: 600;
-  color: rgba(242, 240, 234, 0.96);
-}
+
 
 /* Header 品牌（缩小版 Logo） */
-.brand .cn {
-  font-weight: 500;
-  color: rgba(235, 235, 230, 0.88);
-}
+
 
 /* ===== 英文品牌：JIANGNAN FU ===== */
-.hero-sub,
-.brand .en {
-  font-family: "Inter",
-               ui-sans-serif, system-ui, -apple-system,
-               "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-}
+
 
 /* Hero 英文 */
-.hero-sub {
-  font-size: 14px;
-  color: rgba(220, 220, 215, 0.70);
-}
+
 
 /* Header 英文 */
-.brand .en {
-  font-size: 11px;
-  color: rgba(220, 220, 215, 0.55);
-}
+
 
 
 /* =========================================
@@ -814,27 +696,25 @@ body,
    ========================================= */
 
 /* Hero brand */
-.hero-title {
-  font-size: 56px;
-  font-weight: 600;
-}
+
 
 /* Header brand (logo-size) */
 .brand .cn {
-  font-size: 22px;
-  font-weight: 500;
+  color:rgba(235, 235, 230, 0.88);
+  font-family:"Cormorant Garamond",
+               "Hiragino Mincho ProN",
+               "Yu Mincho",
+               "Noto Serif CJK JP",
+               serif;
+  font-size:22px;
+  font-weight:500;
+  letter-spacing:0.06em;
 }
 
 /* English brand */
-.hero-sub {
-  font-size: 14px;
-  letter-spacing: 0.24em;
-}
 
-.brand .en {
-  font-size: 11px;
-  letter-spacing: 0.28em;
-}
+
+
 
 /* =========================================
    English brand – Playfair Display (wide)
@@ -842,56 +722,49 @@ body,
 
 .hero-sub,
 .brand .en {
-  font-family: "Playfair Display",
+  font-family:"Playfair Display",
                "Times New Roman",
                serif;
-
-  font-weight: 500;
-  letter-spacing: 0.26em; /* 关键：宽但不散 */
+  font-weight:500;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
 }
 
 
 
 
 /* Hero 英文（主 Logo 基线） */
-.hero-sub {
-  font-family: "Playfair Display", "Times New Roman", serif;
-  font-size: 20px;
-  letter-spacing: 0.32em;
-  font-weight: 500;
-  color: rgba(220, 220, 215, 0.70);
-}
+
 
 
 /* Header 英文（缩小版 Logo） */
 .brand .en {
-  font-family: "Playfair Display", "Times New Roman", serif;
-  font-size: 10px;          /* 明确更小 */
-  letter-spacing: 0.22em;   /* 明确更紧 */
-  font-weight: 500;
-  color: rgba(220, 220, 215, 0.55);
+  color:rgba(220, 220, 215, 0.55);
+  font-family:"Playfair Display", "Times New Roman", serif;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0.22em;
+  margin-top:4px;
+  text-transform:uppercase;
 }
 
 
 /* Step 1: very subtle tone change for 府 */
-.hero-title .accent-fu{
-  color: rgba(242,240,234,0.85);
-}
+
 
 
 /* Diagonal subtle highlight for 府 (ivory → champagne) */
 .hero-title .accent-fu{
-  background: linear-gradient(
+  -webkit-background-clip:text;
+  background:linear-gradient(
     135deg, /* 右上 → 左下 */
     rgba(242,240,234,0.96) 0%,
     rgba(242,240,234,0.96) 52%,
     rgba(205,187,147,0.42) 70%,
     rgba(242,240,234,0.96) 100%
   );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  background-clip:text;
+  color:transparent;
 }
 
 /* =========================================
@@ -945,9 +818,7 @@ body,
 
 
 /* Tighten spacing for 江南府 characters */
-.hero-title{
-  letter-spacing: -0.5em;
-}
+
 
 
 /* 最后一个字不要吃 margin */
@@ -957,18 +828,17 @@ body,
 
 
 /* Hero 主要标题 */
-.hero-title {
-  font-family: "Playfair Display", serif;
-  font-weight: 600;
-  letter-spacing: 0.04em; /* 轻微拉开更高级 */
-}
+
 
 /* Hero 英文副标 */
 .hero-sub {
-  font-family: "Playfair Display", serif;
-  font-size: 22px;
-  letter-spacing: 0.28em;
-  font-weight: 500;
+  color:rgba(220, 220, 215, 0.70);
+  display:block;
+  font-family:"Playfair Display", serif;
+  font-size:22px;
+  font-weight:500;
+  letter-spacing:0.28em;
+  margin-top:10px;
 }
 
 /* 正文 / 导航 */
@@ -977,59 +847,46 @@ body,
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 .hero-title{
-  letter-spacing: -0.05em;
+  color:rgba(242, 240, 234, 0.96);
+  font-family:"Playfair Display", serif;
+  font-size:56px;
+  font-weight:600;
+  letter-spacing:-0.05em;
+  line-height:1.12;
+  margin:12px 0 10px;
 }
 
 
 /* Reservation buttons: 2x2 equal grid */
-.reserve-actions{
-  margin-top: 16px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 上2 下2 */
-  gap: 14px;
-}
+
 
 /* Make all buttons same height & centered */
-.reserve-actions .btn-reserve{
-  width: 100%;
-  height: 52px;              /* 统一高度（可调） */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+
 
 .reserve-actions{
-  margin: 16px 0 0 12px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 400px;
+  display:grid;
+  gap:12px;
+  grid-template-columns:repeat(2, 1fr);
+  margin:16px 0 0 12px;
+  margin-top:16px;
+  max-width:400px;
 }
 
 .reserve-actions .btn-reserve{
-  height: 42px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items:center;
+  display:flex;
+  font-size:14px;
+  height:42px;
+  justify-content:center;
+  text-align:center;
+  width:100%;
 }
 
 /* =========================================
    菜单
    ========================================= */
    /* ===== Luxury Black & Gold (Menu Tabs + Courses) ===== */
-.lux-tabs {
-  --gold: #d6b26a;
-  --gold2: rgba(214, 178, 106, 0.25);
-  --line: rgba(255, 255, 255, 0.10);
-  --text: rgba(255, 255, 255, 0.86);
-  --muted: rgba(255, 255, 255, 0.60);
-  --card: rgba(0, 0, 0, 0.35);
-  --card2: rgba(255, 255, 255, 0.03);
 
-  margin-top: 18px;
-}
 
 .lux-tab-input { display: none; }
 
@@ -1204,7 +1061,9 @@ body,
   line-height: 1.8;
 }
 
-.small { font-size: 12px; }
+.small {
+  font-size:12px;
+}
 
 .lux-warn {
   margin: 12px 0 0;
@@ -1236,16 +1095,7 @@ body,
   position: relative;
 }
 
-.lux-notice-btn {
-  list-style: none;
-  cursor: pointer;
-  border: 1px solid rgba(214,178,106,0.45);
-  color: #d6b26a;
-  padding: 8px 14px;
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  background: rgba(214,178,106,0.06);
-}
+
 
 .lux-notice-btn::-webkit-details-marker {
   display: none;
@@ -1332,14 +1182,7 @@ body,
 /* ===== FIX: 外侧注意事項回到 tabs 同一行（不影响内侧 notice-float） ===== */
 
 /* 让 tab 区变成“可换行”的 flex：第一行放按钮+注意事項，第二行放 panels */
-.lux-tabs{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 10px;
-  padding-right: 0 !important;     /* 取消之前预留空间 */
-  position: static !important;     /* 取消之前 relative/absolute 方案 */
-}
+
 
 /* 外侧注意事項：用 margin-left:auto 推到最右边（就在按钮那一行） */
 .lux-tabs > details.lux-notice-inline{
@@ -1358,15 +1201,7 @@ body,
 }
 
 /* ===== 外侧 注意事項 按钮大小 ===== */
-.lux-tabs > details.lux-notice-inline > summary.lux-notice-btn{
-  height: 44px;          /* 高*/
-  padding: 0 18px;       /* 宽*/
-  font-size: 12px;      
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-}
+
 
 /* Mobile */
 /* ===== Mobile hamburger nav (JS) ===== */
@@ -1471,9 +1306,20 @@ body,
 
 /* ランチ/ディナー 这一组 */
 .lux-tabs{
-  display: flex;
-  align-items: center;         /* ✅ 垂直居中对齐 */
-  gap: 10px;
+  --card:rgba(0, 0, 0, 0.35);
+  --card2:rgba(255, 255, 255, 0.03);
+  --gold:#d6b26a;
+  --gold2:rgba(214, 178, 106, 0.25);
+  --line:rgba(255, 255, 255, 0.10);
+  --muted:rgba(255, 255, 255, 0.60);
+  --text:rgba(255, 255, 255, 0.86);
+  align-items:center;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+  padding-right:0 !important;
+  position:static !important;
 }
 
 /* 让右侧 注意事項 永远靠最右 */
@@ -1523,7 +1369,7 @@ body,
     top: 78px !important;           /* ✅ 这里控制“在预约按钮下方”的高度：70~95 都可以试 */
     float: none !important;
     margin: 0 !important;
-    z-index: 9999 !important;
+    z-index: 998 !important;
   }
 
   /* 展开面板：贴着按钮向下展开（仍然在右侧） */
@@ -1561,22 +1407,29 @@ body,
    按钮大小
    ========================================= */
    .lux-notice-btn{
-  height: 45px;
-  min-width: 70px;
-  font-size: 13px;
+  background:rgba(214,178,106,0.06);
+  border:1px solid rgba(214,178,106,0.45);
+  color:#d6b26a;
+  cursor:pointer;
+  font-size:13px;
+  height:45px;
+  letter-spacing:0.2em;
+  list-style:none;
+  min-width:70px;
+  padding:8px 14px;
 }
 
 /* ===== 外侧 注意事項 按钮（只改这个，不影响内侧） ===== */
 .lux-tabs > details.lux-notice-inline > summary.lux-notice-btn{
-  height: 42px;           /* 按钮高度（可改 32 / 36） */
-  min-width: 100px;        /* 按钮宽度（可改 80 / 96） */
-  padding: 0 12px;        /* 左右内边距 */
-  font-size: 13px;        /* 字号 */
-  letter-spacing: .04em;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  align-items:center;
+  display:inline-flex;
+  font-size:13px;
+  height:42px;
+  justify-content:center;
+  letter-spacing:.04em;
+  min-width:100px;
+  padding:0 12px;
+  white-space:nowrap;
 }
 
 
@@ -1596,3 +1449,8 @@ body,
   white-space: nowrap !important;
 }
 
+/* 当 mobile nav 打开时，隐藏右上角预约注意事项 */
+body:has(.mobile-nav.is-open) .lux-notice-inline{
+  opacity: 0;
+  pointer-events: none;
+}
