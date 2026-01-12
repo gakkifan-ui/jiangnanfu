@@ -1455,3 +1455,350 @@ body:has(.mobile-nav.is-open) .lux-notice-inline{
   pointer-events: none;
   transition: opacity .60s ease;
 }
+
+/* =========================================
+   图片滑动
+   ========================================= */
+   /* =========================================
+   Interior Gallery (horizontal swipe)
+   ========================================= */
+
+/* ===== Gallery: continuous horizontal scroll (no big empty gap) ===== */
+.gallery{
+  margin-top: 16px;
+
+  display: flex;
+  gap: 12px;
+
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+
+  scroll-snap-type: x mandatory;
+  padding-bottom: 6px;
+
+  /* 如果你之前写过 space-between / center，强制拉回 */
+  justify-content: flex-start;
+  align-items: stretch;
+
+  /* 隐藏滚动条（可选） */
+  scrollbar-width: none;
+}
+.gallery::-webkit-scrollbar{ display:none; }
+
+.gallery-item{
+  flex: 0 0 65%;          /* 每张图占宽度，手机端好滑 */
+  margin: 0;
+
+  border-radius: 8px;
+  overflow: hidden;
+
+  border: none;
+  background: none;
+
+  aspect-ratio: 4 / 3;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 860px){
+  .gallery-item{
+    flex-basis: 42%;      /* 桌面端一屏看到更多 */
+  }
+}
+
+.gallery-item img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+
+  /* 防止拖拽时“抓住图片” */
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+
+
+.gallery.is-dragging{
+  scroll-snap-type: none;  /* 拖动时不吸附，松手后再吸附 */
+}
+
+/* Hide horizontal scrollbar (keep swipe) */
+.gallery{
+  scrollbar-width: none;        /* Firefox */
+}
+
+.gallery::-webkit-scrollbar{
+  display: none;                /* Chrome / Safari */
+}
+
+/* =========================================
+   图片放大
+   ========================================= */
+   /* =========================
+   Lightbox
+   ========================= */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.78);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 18px;
+}
+
+.lightbox.is-open{ display:flex; }
+
+.lightbox img{
+  max-width: min(1100px, 92vw);
+  max-height: 86vh;
+  border-radius: 10px;
+  display: block;
+  object-fit: contain;
+}
+
+.lightbox-close{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.35);
+  color: rgba(255,255,255,.9);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.78);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 18px;
+}
+.lightbox.is-open{ display:flex; }
+.lightbox img{ max-width: 92vw; max-height: 86vh; border-radius: 10px; }
+.lightbox-close{
+  position: absolute; top: 14px; right: 14px;
+  width: 40px; height: 40px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.35);
+  color: rgba(255,255,255,.9);
+  font-size: 20px; cursor: pointer;
+}
+
+/* =========================================
+   店铺情报注意事项
+   ========================================= */
+  /* =========================
+   Menu Info Section
+   ========================= */
+
+/* ===== Lux info: premium look ===== */
+
+.lux-info{
+  margin-top: 22px;
+  padding: 22px 22px;
+  border: 1px solid rgba(230,185,108,.18);
+  border-radius: 14px;
+  background:
+    radial-gradient(1200px 420px at 12% 0%, rgba(230,185,108,.10), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.02));
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+
+.lux-subtitle{
+  margin: 0 0 14px;
+  font-size: 15px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(230,185,108,.92);
+}
+
+.lux-info-grid{
+  display: grid;
+  gap: 18px;
+}
+
+/* 每个 dl 做成“卡片行”，有分组感 */
+.lux-info-grid dl{
+  margin: 0;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255,255,255,.06);
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  column-gap: 18px;
+  row-gap: 10px;
+}
+
+.lux-info-grid dl:first-child{
+  border-top: none;
+  padding-top: 6px;
+}
+
+.lux-info-grid dt{
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: rgba(230,185,108,.88);
+  opacity: .95;
+}
+
+.lux-info-grid dd{
+  margin: 0;
+  color: rgba(255,255,255,.86);
+  line-height: 1.85;
+  font-weight: 400;
+}
+
+/* 关键：别让内容全是粗体，“粗体只给标签” */
+.lux-info-grid dd strong{
+  font-weight: 600;
+  color: rgba(255,255,255,.92);
+}
+
+/* 行间距更轻，像菜单说明书而不是表格 */
+.lux-info-grid dd div{
+  margin: 0 0 6px;
+}
+
+/* 注释更弱一点，像“脚注” */
+.lux-info-grid small{
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: .02em;
+  color: rgba(255,255,255,.55);
+}
+
+/* Dress code：单独强调但不“吼” */
+.lux-note{
+  border-top: 1px solid rgba(230,185,108,.16);
+  padding-top: 16px;
+}
+
+.lux-note dd{
+  color: rgba(255,255,255,.9);
+}
+
+/* 手机：变成上下结构 */
+@media (max-width: 760px){
+  .lux-info{
+    padding: 18px 16px;
+    border-radius: 12px;
+  }
+  .lux-info-grid dl{
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
+}
+
+/* =========================================
+   卷纸
+   ========================================= */
+/* ===== Lux accordion (scroll / paper unfold style) ===== */
+
+.lux-details{
+  position: relative;
+}
+
+/* summary 本身 */
+.lux-summary{
+  list-style: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 4px 14px;
+  margin-bottom: 10px;
+
+  color: rgba(230,185,108,.95);
+  letter-spacing: .12em;
+  font-size: 15px;
+}
+
+.lux-summary::-webkit-details-marker{
+  display: none;
+}
+
+.lux-summary em{
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: rgba(255,255,255,.45);
+  transition: opacity .25s ease;
+}
+
+details[open] .lux-summary em{
+  opacity: 0;
+}
+
+/* 内容区域：卷纸核心 */
+.lux-info-grid{
+  overflow: hidden;
+  transform-origin: top;
+  animation: lux-unfold .7s cubic-bezier(.2,.7,.1,1);
+}
+
+/* 关闭时不显示 */
+details:not([open]) .lux-info-grid{
+  display: none;
+}
+
+/* 卷纸展开动画 */
+@keyframes lux-unfold{
+  from{
+    opacity: 0;
+    transform: translateY(-8px) scaleY(.92);
+    filter: blur(2px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+    filter: blur(0);
+  }
+}
+
+/* 倒三角 */
+/* ===== Chevron indicator for details ===== */
+
+.lux-summary em{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: rgba(230,185,108,.75);
+}
+
+/* 倒三角本体（不是实心箭头） */
+.lux-summary .chevron{
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+
+  transform: rotate(45deg); /* 初始：倒三角 */
+  transition: transform .35s cubic-bezier(.2,.7,.1,1),
+              opacity .25s ease;
+  opacity: .7;
+}
+
+/* 展开时：箭头向上（提示可收起） */
+details[open] .lux-summary .chevron{
+  transform: rotate(-135deg);
+  opacity: .4;
+}
