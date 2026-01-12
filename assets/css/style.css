@@ -1453,4 +1453,5 @@ body,
 body:has(.mobile-nav.is-open) .lux-notice-inline{
   opacity: 0;
   pointer-events: none;
+  transition: opacity .60s ease;
 }
